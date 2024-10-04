@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <Configurations>Release;Debug</Configurations>
+        <Platforms>x86</Platforms>
+        <RootNamespace>ConsoleApp1</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Update="$(ProjectDir)config\**"  CopyToOutputDirectory="PreserveNewest"  />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="ANT_NET">
+        <HintPath>ANT_NET.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="ANT_DLL.dll" />
+      <Content Include="ANT_DLL.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="ANT_NET.dll" />
+      <Content Include="ANT_NET.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="ANT_NET.xml" />
+      <Content Include="ANT_NET.xml">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="ANT_WrappedLib.dll" />
+      <Content Include="ANT_WrappedLib.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="DSI_SiUSBXp_3_1.dll" />
+      <Content Include="DSI_SiUSBXp_3_1.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="DSI_CP210xManufacturing_3_1.dll" />
+      <Content Include="DSI_CP210xManufacturing_3_1.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
+
+</Project>

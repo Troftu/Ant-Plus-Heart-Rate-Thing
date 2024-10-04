@@ -1,0 +1,6 @@
+﻿namespace ANT_Console_Demo;
+
+public static class NetworKey
+{
+    public static byte[] Key = [0xB9, 0xA5, 0x21, 0xFB, 0xBD, 0x72, 0xC3, 0x45];
+}
