@@ -3,8 +3,8 @@
 /workspace.xml
 # Rider ignored files
 /modules.xml
+/.idea.AntPlusHeartRateThing.iml
 /contentModel.xml
-/.idea.ConsoleApp1.iml
 /projectSettingsUpdater.xml
 # Editor-based HTTP Client requests
 /httpRequests/

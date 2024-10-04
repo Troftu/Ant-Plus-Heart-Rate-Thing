@@ -27,6 +27,9 @@ namespace ANT_Console_Demo
 {
     public class Demo
     {
+        private static readonly string FilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
+        "heart_rate.txt");
+        
         private static readonly byte CHANNEL_TYPE_INVALID = 2;
 
         private static readonly byte USER_ANT_CHANNEL = 0;         // ANT Channel to use
@@ -136,6 +139,7 @@ namespace ANT_Console_Demo
                 {
                     System.Threading.Thread.Sleep(100);
                 }
+
                 // Clean up ANT
                 Console.WriteLine("Disconnecting module...");
                 ANT_Device.shutdownDeviceInstance(ref device0);
@@ -223,11 +227,9 @@ namespace ANT_Console_Demo
                     case ANT_ReferenceLibrary.ANTMessageID.BROADCAST_DATA_0x4E:
                         try
                         {
-                            byte heartRate = response.getDataPayload()[7];
+                            var heartRate = response.getDataPayload()[7];
                             Console.WriteLine(heartRate);
-                            var path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
-                                "heart_rate.txt");
-                            File.WriteAllText(path, $"{heartRate}", Encoding.UTF8);
+                            File.WriteAllText(FilePath, $"{heartRate}", Encoding.UTF8);
                         }
                         catch (Exception e)
                         {
